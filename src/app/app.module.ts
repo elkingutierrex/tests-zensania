@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -19,6 +20,7 @@ import { FormsModule } from '@angular/forms';
     ,HttpClientModule
     ,AppRoutingModule
     ,FormsModule
+    ,NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

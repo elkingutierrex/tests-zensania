@@ -12,7 +12,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of arrayData">
+        <tr *ngFor="let item of arrayData | paginate: { itemsPerPage: itemsPerPage, currentPage: actualPage, totalItems: total }; let i as index ">
         
           <td class="col-8"> 
             <div>
@@ -53,6 +53,10 @@
       
       </tbody>
     </table>
+
+    <pagination-controls (pageChange)="actualPage = $event"></pagination-controls>
+
+
   </div>
 </div>
 

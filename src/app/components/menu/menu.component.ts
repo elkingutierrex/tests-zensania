@@ -8,19 +8,24 @@ import { MenuService } from '../menu.service';
   ]
 })
 export class MenuComponent implements OnInit {
-
+  
   arrayData = [];
+  actualPage: number = 1;
+  itemsPerPage : number = 5;
+  total: number = 0;
 
   constructor(public _menu: MenuService) { }
 
   ngOnInit(): void {
     this.getdata();
+ 
   }
 
   getdata(){
 
     this._menu.getData().subscribe(result => {
       this.arrayData = result['result']['items']
+      this.total = this.arrayData.length;
     })
 
   }
