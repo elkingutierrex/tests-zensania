@@ -1,0 +1,28 @@
+<p>menu workdfs!</p>
+
+
+
+<table class="table table-hover table-dark">
+    <thead>
+      <tr>
+        <th scope="col">About</th>
+        <th scope="col">Acces URL</th>
+        <th scope="col">Titulo</th>
+      
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of arrayData">
+       
+        <td> {{ item._about }} </td>
+        <td> {{ item.accessURL }} </td>
+        <td> {{ item.title }} </td>
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+<pre>
+    {{ arrayData | json }}
+</pre>

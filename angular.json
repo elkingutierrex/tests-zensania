@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "pruebaZensania"
+    }
+  },
+  "defaultProject": "pruebaZensania",
+  "cli": {
+    "analytics": false
+  }
 }
