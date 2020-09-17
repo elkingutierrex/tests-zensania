@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { AppRoutingModule } from './app.routing.module';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
     BrowserModule
     ,HttpClientModule
     ,AppRoutingModule
+    ,FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

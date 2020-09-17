@@ -1,24 +1,59 @@
-<div class="mx-3">
+<div class="mx-5">
   <h1>Data</h1>
-  <table class="table table-hover table-dark">
-    <thead>
-      <tr>
-        <th scope="col">Title</th>
-        <th scope="col" >About</th>
-        <th scope="col">Acces URL</th>
+
+  <div class="row">
+    <table class="table table-hover table-dark col-12"  >
+      <thead>
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col" >About</th>
+          <th scope="col">Acces URL</th>
+        
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of arrayData">
+        
+          <td class="col-8"> 
+            <div>
+              <i class="far fa-edit" 
+              data-toggle="tooltip" data-placement="top" title="Tooltip on top"></i>
+              <i class="far fa-trash-alt"></i>
+
+            </div>
+
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Recipient's username"
+               aria-label="Recipient's username" 
+               aria-describedby="button-addon2"
+               [(ngModel)]="item.title" >
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+              </div>
+            </div>
+            
+          </td>
+
+          <td class="col-3">  
+            <span class="badge badge-primary">
+              <a href="item._about" target="_blank" style="color: aliceblue !important;">
+
+                {{ item._about }}
+              </a>  
+            </span>
+          
+          </td>
+          <td class="col-1"> 
+            
+            <a href="item.accessURL" target="_blank"> 
+              <i class="far fa-file-pdf fa-2x"></i>
+            </a> 
+          </td>
+        </tr>
       
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of arrayData" class="">
-       
-        <td class=""> {{ item.title }} </td>
-        <td class="">  <a href="item._about" target="_blank">{{ item._about }}</a>  </td>
-        <td class=""> <a href="item.accessURL" target="_blank"> {{ item.accessURL }}</a> </td>
-      </tr>
-    
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 
@@ -27,6 +62,6 @@
 
   
 
-<!-- <pre>
+<pre>
     {{ arrayData | json }}
-</pre> -->
+</pre>
