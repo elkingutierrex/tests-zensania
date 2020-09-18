@@ -1,0 +1,35 @@
+<div class="mx-5" *ngIf="item">
+
+    <h2>Edit item</h2>
+
+    <div>
+        <label for=""> Title</label>
+        <input type="text" class="form-control" [(ngModel)]="item.title">
+    </div>
+
+    <div>
+        <label for=""> About </label>
+        <input type="text" class="form-control"  [(ngModel)]="item._about">
+    </div>
+
+    <div>
+        <label for=""> URL Access</label>
+        <input type="text" class="form-control" [(ngModel)]="item.accessURL">
+    </div>
+
+    <button class="btn btn-secondary"
+            (click)="backPage()">  
+        <i class="fas fa-arrow-left fa-2x"></i>  
+    </button>
+    <button class="btn btn-danger"
+            (click)="deleteItem(item)">  
+        <i class="far fa-trash-alt fa-2x" ></i> 
+     </button>
+    <button class="btn btn-success"
+            (click)="updateItem(item)">  
+        <i class="far fa-save fa-2x"></i>
+    </button>
+
+</div>
+
+

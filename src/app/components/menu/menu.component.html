@@ -1,5 +1,7 @@
-<div class="mx-5">
+<div class="mx-5" style="z-index: 9;">
+  
   <h1>Data</h1>
+
 
   <div class="row">
     <table class="table table-hover table-dark col-12"  >
@@ -8,43 +10,22 @@
           <th scope="col">Title</th>
           <th scope="col" >About</th>
           <th scope="col">Acces URL</th>
+          <th scope="col"></th>
         
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of arrayData | paginate: { itemsPerPage: itemsPerPage, currentPage: actualPage, totalItems: total }; let i as index ">
+        <tr *ngFor="let item of _menu.arrayData | paginate: { itemsPerPage: itemsPerPage, currentPage: actualPage, totalItems: this._menu.arrayData.length }; let i = index ">
         
-          <td class="col-8"> 
-            <div>
-          
-              <i class="fas fa-times" 
-                  style="cursor: pointer;"
-                  (click)="deleteItem( i, item.title )"></i>
-
-            </div>
-
-            <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Recipient's username"
-               aria-label="Recipient's username" 
-               aria-describedby="button-addon2"
-               [(ngModel)]="item.title"
-               [disabled]='!item.swEdit' >
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary" 
-                        type="button" 
-                        id="button-addon2"
-                        (click)="changeData(item)"
-                        [ngClass]="{'btn btn-outline-success': item.swEdit
-                                    ,'btn btn-outline-secondary': !item.swEdit }"> {{ !item.swEdit ? 'Edit':'Save' }}  </button>
-              </div>
-            </div>
+          <td class="col-8">    
+           
+            <span>  {{item.title}} </span>
             
           </td>
 
           <td class="col-3">  
             <span class="badge badge-primary">
               <a href="item._about" target="_blank" style="color: aliceblue !important;">
-
                 {{ item._about }}
               </a>  
             </span>
@@ -55,6 +36,14 @@
             <a href="item.accessURL" target="_blank"> 
               <i class="far fa-file-pdf fa-2x"></i>
             </a> 
+          </td>
+          <td>
+            <div>
+              <button class="btn btn-warning"
+                      (click)="editItem( i ) ">  <i class="far fa-edit"></i> </button>
+              <button class="btn btn-danger"
+              (click)="deleteItem( i, item )">  <i class="far fa-trash-alt"></i> </button>
+            </div>
           </td>
         </tr>
       
@@ -67,12 +56,14 @@
   </div>
 </div>
 
+<router-outlet></router-outlet>
 
 
 
 
-  
-<!-- 
+
+<!--   
+
 <pre>
-    {{ arrayData | json }}
+    {{ _menu.arrayData | json }}
 </pre> -->

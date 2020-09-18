@@ -8,12 +8,16 @@ import { MenuComponent } from './components/menu/menu.component';
 import { AppRoutingModule } from './app.routing.module';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
+import { MenuItemComponent } from './components/menu/menuItem/menu-item.component';
+import { ListadoComponent } from './components/listado/listado.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    NavbarComponent
+    NavbarComponent,
+    MenuItemComponent,
+    ListadoComponent
   ],
   imports: [
     BrowserModule
